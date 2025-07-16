@@ -1,10 +1,11 @@
-import { duck,duckContainer,filter } from "./Data.js";
-import { showDucks } from "./DuckFunction.js";
+import { duck, duckContainer, filter } from "./data.js";
+import { showDucks } from "./duckFunction.js";
 
 showDucks(duck);
 
 filter.addEventListener("change", () => {
   const selected = filter.value;
+
   if (selected === "all") {
     showDucks(duck);
   } else {
