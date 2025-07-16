@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="/CSS/cart.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
+
+
+
+
 </head>
 <body>
   <header class="headerContainer">
@@ -24,6 +28,7 @@
         </div>
         </div>
   </header>
+
   <main>
     <section>
     <div class="buy">
@@ -36,8 +41,8 @@
         <div class="transaction" id="transaction">
         </div>      
 </section>
-
 </main>
+
 <footer class="footer">
   <div class="media">
     <img src="/img/ig.png" alt="instagram">
@@ -49,6 +54,63 @@
     <p>&copy; Todos los derechos reservados</p>
   </div>
 </footer>
+
+<!-- MODAL 1 -->
+<div class="modal" id="modal">
+  <div class="modal-header">
+    <div class="title">Tramitación de Pedido</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    <p class="name">Gabriela Gallegos Anda</p>
+    <p class="cc">Pagado con MasterCard</p>
+
+    <!-- 📦 Aquí se mostrará el resumen dinámico -->
+    <div id="resumen-compra"></div>
+
+    <button data-modal-target="#modal2" class="buy">Comprar Ahora</button>
+  </div>
+</div>
+
+<!-- MODAL 2 -->
+<div class="modal" id="modal2">
+  <div class="modal-header">
+    <div class="title">¿Finalizar compra?</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    <p>Tu pedido será enviado en breve. ¿Confirmas?</p>
+    <button id="finalize-purchase" class="buy">Finalizar Compra</button>
+  </div>
+</div>
+
+<!-- MODAL 3 -->
+<div class="modal" id="modal3">
+  <div class="modal-header">
+    <div class="title">✅ Compra Exitosa</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    <p>¡Gracias por tu compra, Gabi! 🛍️</p>
+    <button id="go-to-cart">Volver al Carrito</button>
+  </div>
+</div>
+
+<div id="overlay"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script type ="module" src="/JS/cart.js"> </script>
 </body>
 </html>

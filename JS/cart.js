@@ -1,4 +1,8 @@
-import { actualizarContador } from "./cartLogic.js";
+import {
+  actualizarContador,
+  inicializarModales,
+  openModal
+} from "./cartLogic.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -47,7 +51,37 @@ document.addEventListener("DOMContentLoaded", () => {
   transaction.appendChild(totalFinal);
 
   actualizarContador();
+  inicializarModales();
+  const btnTramitar = document.getElementById("btn-details-buy");
+  btnTramitar?.addEventListener("click", () => {
+    const modal = document.querySelector("#modal");
+    const resumen = document.getElementById("resumen-compra");
+    resumen.innerHTML = generarResumen(carrito);
+    openModal(modal);
+  });
 });
+
+
+function generarResumen(carrito) {
+  let resumenHTML = `<div class="resumen-container"><h4>Resumen de tu pedido:</h4><ul class='resumen-lista'>`;
+
+  let total = 0;
+  carrito.forEach(producto => {
+    const nombre = producto.firstname;
+    const precio = producto.price.toFixed(2);
+    const cantidad = producto.cantidad;
+
+    resumenHTML += `<li>${nombre} x${cantidad} — ${precio} € c/u</li>`;
+    total += producto.price * producto.cantidad;
+  });
+
+  resumenHTML += `</ul><p class="total-final"><strong>Total a pagar: ${total.toFixed(2)} €</strong></p></div>`;
+  return resumenHTML;
+}
+
+
+
+
 
 document.body.addEventListener("click", (e) => {
   const id = e.target.getAttribute("data-id");
@@ -59,6 +93,16 @@ document.body.addEventListener("click", (e) => {
     aumentarCantidadProducto(id);
   }
 });
+
+function eliminarProductoDelCarrito(id) {
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  carrito = carrito.filter(p => p.id != id);
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  document.querySelector(`.item-carrito[data-id="${id}"]`)?.remove();
+  actualizarContador();
+  actualizarSubtotal();
+}
+
 
 function aumentarCantidadProducto(id) {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -78,6 +122,7 @@ function aumentarCantidadProducto(id) {
   actualizarContador();
   actualizarSubtotal();
 }
+
 
 
 function actualizarSubtotal() {
