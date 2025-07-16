@@ -9,5 +9,3 @@ export const duck = [
 
 export const duckContainer = document.getElementById("duck-container");
 export const filter = document.getElementById("filter-category");
-
-// variables para eventos de botones - pagina details

@@ -56,7 +56,6 @@ function actualizarContador() {
     contador.textContent = total;
   };
 
-// evento al boton + para sumar +1 (boton +)
 document.getElementById("btn-add").addEventListener("click", () => {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -71,22 +70,18 @@ document.getElementById("btn-add").addEventListener("click", () => {
     actualizarContador();
   });
 
-
-  // evento para restar (boton -)
   document.getElementById("btn-sub").addEventListener("click", () => {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     const existe = carrito.find(item => item.id === pato.id);
     const position = carrito.findIndex(item => item.id === pato.id);
-    //console.log(existe)
-    //console.log(position)
-    //console.log(carrito)
-    if (existe.cantidad > 1) {
+    
+      if (existe.cantidad > 1) {
       carrito[position].cantidad -= 1;
     }  else {
       carrito = carrito.filter(item => item.id !== pato.id);
     }
-    //console.log(carrito)
+  
     localStorage.setItem("carrito", JSON.stringify(carrito));
     actualizarContador();
   });

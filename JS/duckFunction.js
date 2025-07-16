@@ -1,4 +1,3 @@
-// JS/DuckFunction.js
 import { duckContainer} from "./data.js";
 import { agregarAlCarrito } from "./cartLogic.js";
 

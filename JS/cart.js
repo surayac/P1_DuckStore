@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     subtotal += producto.price * producto.cantidad;
   });
 
-  // Mostrar subtotal
   const totalFinal = document.createElement("p");
   totalFinal.innerHTML = `
     <strong>Subtotal: <span id="subtotal">${subtotal.toFixed(2)}</span> €</strong>
@@ -50,35 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarContador();
 });
 
-//Delegación de eventos para botones
 document.body.addEventListener("click", (e) => {
   const id = e.target.getAttribute("data-id");
 
-  // Eliminar
   if (e.target.classList.contains("btn-sub")) {
     restarCantidadProducto(id);
   }
-
-  // Añadir cantidad
   if (e.target.classList.contains("btn-add")) {
     aumentarCantidadProducto(id);
   }
 });
 
-/* Eliminar producto
-function eliminarProductoDelCarrito(id) {
-  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-  carrito = carrito.filter(p => p.id != id);
-  localStorage.setItem('carrito', JSON.stringify(carrito));
-
-  document.querySelector(`.item-carrito[data-id="${id}"]`)?.remove();
-  actualizarContador();
-  actualizarSubtotal();
-} */
-
-  
-
-// Aumentar cantidad del producto
 function aumentarCantidadProducto(id) {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const producto = carrito.find(p => p.id == id);
@@ -87,7 +68,6 @@ function aumentarCantidadProducto(id) {
   producto.cantidad += 1;
   localStorage.setItem("carrito", JSON.stringify(carrito));
 
-  // Actualizar cantidad visual
   const item = document.querySelector(`.item-carrito[data-id="${id}"]`);
   if (item) {
     item.querySelector(".cantidad-num").textContent = producto.cantidad;
@@ -100,7 +80,6 @@ function aumentarCantidadProducto(id) {
 }
 
 
-// Recalcular subtotal general
 function actualizarSubtotal() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const subtotal = carrito.reduce((total, p) => total + p.price * p.cantidad, 0);
@@ -110,19 +89,17 @@ function actualizarSubtotal() {
   }
 }
 
-//Restar productos del carro
 function restarCantidadProducto(id) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   const index = carrito.findIndex(item => item.id == id);
-  if (index === -1) return; // No se encontró el producto
+  if (index === -1) return; 
 
   const producto = carrito[index];
 
   if (producto.cantidad > 1) {
     carrito[index].cantidad -= 1;
 
-    // Actualizar cantidad en el DOM
     const item = document.querySelector(`.item-carrito[data-id="${id}"]`);
     if (item) {
       item.querySelector(".cantidad-num").textContent = carrito[index].cantidad;
@@ -130,10 +107,8 @@ function restarCantidadProducto(id) {
     }
 
   } else {
-    // Eliminar producto del carrito
     carrito = carrito.filter(item => item.id != id);
 
-    // Eliminar visualmente del DOM
     const item = document.querySelector(`.item-carrito[data-id="${id}"]`);
     if (item) item.remove();
   }
@@ -142,7 +117,6 @@ function restarCantidadProducto(id) {
   actualizarContador();
   actualizarSubtotal();
 
-  // Si el carrito queda vacío, mostrar mensaje
   if (carrito.length === 0) {
     document.getElementById("carrito-contenedor").innerHTML = "<p>Tu carrito está vacío.</p>";
     const subtotal = document.getElementById("subtotal");
