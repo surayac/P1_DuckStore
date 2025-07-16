@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FCB454;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #FFF9F0;
+  padding: 2rem;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  height: 3rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 0.8rem;
+}
+
+.logo {
+  width: 130px;
+  height: auto;
+  margin-right: 2rem;
+}
+
+.headerContent {
+  flex: 1;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 4rem;
+  gap: 2rem;
+}
+.navLinks {
+  display: flex;
+  width: 90%;
+  justify-content:flex-end;
+  font-size: 1rem;
+  gap: 1rem;
+  transition: transform 0.1s ease;
+
+}
+.navLinks :hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  color: rgb(218, 124, 37);
+}
+
+.navBar a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  
+}
+.carrito-icono {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.icon {
+  width: 30px;
+  cursor: pointer;
+}
+.contador-carrito {
+  position: absolute;
+  top: -16px;
+  right: 1px;
+  background-color: rgb(218, 124, 37);
+  color: white;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 3px 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px black;
+  transition: transform 0.2s ease;
+}
+
+.buy {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  background-color: #FFF9F0;
+  margin-top: 0.1rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  }
+
+  
+.transaction {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #FFF9F0;
+  padding: 2rem;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  height: 3rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+  
+   
+  .pato_grande {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 3.5rem;
+   
+
+  }
+
+  .pato_grande img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  }
+
+  
+  .pato_grande img:hover{
+    transform: scale(1.5); 
+ }
+
+  .info {
+  min-width: 600px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 0.8;
+  }
+  
+  h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 1.2rem;
+  
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+    color: #444;
+    margin: 1rem 0;
+    font-weight: bold;
+  }
+   
+  .buttons{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  button{
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+  }
+  .cart{
+    border: 1px solid  black;
+    background:  #FFF085;
+    transition: transform 0.2s ease;
+
+  }
+  .cart:hover{
+    transform: scale(1.1);
+    background-color: #efdd4f;
+  }
+ 
+
+  .footer {
+    background-color: #FFF085;
+    padding: 2rem;
+    margin: 0.1rem auto 0;
+    width: 90%;
+    max-width: 1200px;
+    min-height: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .media {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .media img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .media img:hover {
+    transform: scale(1.2);
+  }
+  
+  .text {
+    text-align: center;
+    color: #000000;
+    line-height: 1.2;
+  }
+  
+  .text h4 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .text p {
+    margin: 0.2rem 0 0 0;
+    font-size: 1rem;
+  }
+ 
+  
+  @media screen and (max-width: 576px){
+    .headerContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      text-align: center;
+     
+    }
+    .buy {
+      flex-direction: column;
+      align-items: center;
+    }
+    .miniaturas {
+      flex-direction: column;
+      align-items: center;
+    }
+    .miniaturas > div {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .navLinks {
+      font-size: 0.7rem;
+    }
+    .navBar{
+      position:absolute;
+      margin-top: -8rem;
+      right: -13px; 
+      gap: 7px;
+          
+    }
+    .icon {
+      width: 20px;
+      cursor: pointer;
+    }
+    .miniaturas img {
+      width: 100%;
+      max-width: 300px;
+    }
+    .miniaturas .contenido {
+      align-items: center;
+    }
+    .transaction {
+      width: 100%;
+      text-align: center;
+    }
+
+    
+
+      }
+

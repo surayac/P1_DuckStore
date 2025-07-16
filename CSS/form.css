@@ -1,14 +1,8 @@
 body {
   font-family: 'Montserrat', sans-serif;
-}
-
-
-
-body {
   margin: 0;
   padding: 0;
   background-color: #FCB454;
-  font-family: sans-serif;
 }
 
 .headerContainer {
@@ -62,20 +56,30 @@ body {
   color: rgb(0, 0, 0);
   
 }
-
-.icons {
-  display: flex;
-  margin-left: auto;
-  gap: 1rem;
+.carrito-icono {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .icon {
-  font-size: 1.5rem;
+  width: 30px;
   cursor: pointer;
-  width: 25px;
-  gap: 1rem;
 }
 
+.contador-carrito {
+  position: absolute;
+  top: -16px;
+  right: 1px;
+  background-color: rgb(218, 124, 37);
+  color: white;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 3px 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px black;
+  transition: transform 0.2s ease;
+}
 .introText {
   max-width: 600px;
   color: #000;
@@ -170,15 +174,25 @@ textarea:focus {
 
   @media screen and (max-width: 576px){
     .headerContainer {
-      display:flex;
       flex-direction: column;  
-      max-width: 200px;
+      position: relative;
     }
     h1{
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+    }
+    .navLinks {
+      font-size: 0.7rem;
     }
     .navBar{
-      display: none;
+      position:absolute;
+      margin-top: -8rem;
+      right: -13px; 
+      gap: 7px;
+          
+    }
+    .icon {
+      width: 20px;
+      cursor: pointer;
     }
     .form{
       max-width: 200px;

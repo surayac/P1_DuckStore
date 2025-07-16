@@ -1,12 +1,8 @@
 body {
   font-family: 'Montserrat', sans-serif;
-}
-
-body {
   margin: 0;
   padding: 0;
   background-color: #FCB454;
-  font-family: sans-serif;
 }
 
 .headerContainer {
@@ -59,22 +55,30 @@ body {
   color: rgb(0, 0, 0);
   
 }
-
-.icons {
-  display: flex;
-  margin-left: auto;
-  gap: 1rem;
+.carrito-icono {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .icon {
-  font-size: 1.5rem;
+  width: 30px;
   cursor: pointer;
-  width: 25px;
-  gap: 1rem;
 }
 
-
-
+.contador-carrito {
+  position: absolute;
+  top: -16px;
+  right: 1px;
+  background-color: rgb(218, 124, 37);
+  color: white;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 3px 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px black;
+  transition: transform 0.2s ease;
+}
 .introText {
   max-width: 600px;
   color: #000;
@@ -83,13 +87,6 @@ body {
   margin-top: 4rem;
   font-size: 1.3rem;
   text-align: justify;
-}
-
-h1{
-  text-align: center;
-  color: #000000;
-  margin-top: 0;
-  font-size: 2.3rem;
 }
 
 .filters-container {
@@ -104,19 +101,38 @@ h1{
   gap: 0.5rem;
   flex-wrap: wrap; /* 👈 permite que se acomode si no entra */
 }
-
-.title{
-  background-color:#FFF085;
+.title {
+  background-color: #FFF085;
   display: flex;
-  justify-content: center;
-  align-items:center;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
   margin: 0 auto;
   width: 90%;
-  height: 1.9rem;
+  height: auto;
   max-width: 1200px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  gap: 1rem; /* separa el h1 de los filtros */
 }
+
+.title h1 {
+  margin: 0;
+  font-size: 2.3rem;
+  text-align: center;
+  width: 100%;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-self: flex-end; /* 👈 hace que se alinee a la derecha */
+}
+
   #carrousel {
     font-size: 1.5em;
     margin: 3rem;
@@ -224,20 +240,44 @@ footer{
 
 @media screen and (max-width: 576px){
   .headerContainer {
-    display:flex;
     flex-direction: column;  
+    position: relative;
   }
-  h1{
-    font-size: 1.8rem;
+  .title h1{
+    font-size: 1.3rem;
+  }
+
+  .navLinks {
+    font-size: 0.7rem;
+  }
+  .carrito-icono {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
   }
   .navBar{
-    display: none;
+    position:absolute;
+    margin-top: -12rem;
+    right: -13px; 
+        
   }
-  .introText{
-    margin-top: 1rem;
+  .logo{
+    width: 200px;
   }
+  .icon {
+    width: 20px;
+    cursor: pointer;
+  }
+  
+  .contador-carrito {
+    position: absolute;
+    font-size: 6px;
+   }
+
   .carrouselContainer {
-    display:inline-block;
+    display: block;
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
 }
