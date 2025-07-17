@@ -23,21 +23,20 @@
       <main>
         <div class="main">
     <h1>¡QUIERO MI PATITO DE GOMA!</h1>
-    <section class="form">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required />
-      
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required />
-      
-        <label for="message">Tu cuack, cuack (comentario):</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-      
-        <button type="submit">Enviar</button>
-      </section>
-        </div>
+    <form id="contactForm" class="form" action="#">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required />
+    
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required />
+    
+      <label for="message">Tu cuack, cuack (comentario):</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+    
+      <button type="submit">Enviar</button>
+  </form>
+      </div>
      </main>
-
       <footer class="footer">
         <div class="media">
         <img src="/img/ig.png" alt="instagram">
@@ -49,5 +48,6 @@
           <p>&copy;Todos los derechos reservados</p>
         </div>
       </footer>
+      <script src="../JS/form.js"></script>
 </body>
 </html>
