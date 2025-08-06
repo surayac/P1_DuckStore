@@ -13,12 +13,13 @@ HTML5 CSS3 JavaScript (Módulos ES)
 Tests (pendiente) En una fase posterior se integrarán tests unitarios con Vitest para validar la lógica del carrito.
 
 ##  Autores
-
-Suraya Souto
-Gabriela Gallegos 
-Erika P. Montoya 
-Monserrat Muñoz 
-Ana Aguilera 
-
+<ul>
+  <li>Suraya Souto</li>
+  <li>Gabriela Gallegos </li>
+  <li>Erika P. Montoya </li>
+  <li>
+Monserrat Muñoz </li>
+  <li>Ana Aguilera </li>
+</ul>
 
 ## Proyecto realizado para Factoría F5
