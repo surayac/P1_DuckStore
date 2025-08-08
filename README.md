@@ -12,9 +12,9 @@ HTML5 CSS3 JavaScript (Módulos ES)
 
 Tests (pendiente) En una fase posterior se integrarán tests unitarios con Vitest para validar la lógica del carrito.
 
-##  Autores
+##  Autoras
 <ul>
-  <li>Suraya Souto</li>
+  <li>Suraya Matta</li>
   <li>Gabriela Gallegos </li>
   <li>Erika P. Montoya </li>
   <li>
