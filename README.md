@@ -1,4 +1,4 @@
-# Tienda Ducky Duck
+# Tienda Ducky Duck JS
 
 Proyecto grupal de desarrollo web: tienda ficticia de patitos de goma con carrito de compras dinámico.
 
