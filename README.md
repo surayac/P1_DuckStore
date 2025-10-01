@@ -25,7 +25,7 @@ Tests (pendiente) En una fase posterior se integrarán tests unitarios con Vites
 
 **Ana Aguilera** – [LinkedIn](https://www.linkedin.com/in/ana-aguilera-morales-011b1a238/)
 
-**Suraya Matta** – [LinkedIn](https://www.linkedin.com/in/suraya-mattar/)
+**Suraya Mattar** – [LinkedIn](https://www.linkedin.com/in/suraya-mattar/)
 
 **Monserrat Muñoz** – [GitHub](https://github.com/Montc027)
 
